@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './containers/App';
-import Categories from './containers/Categories';
-
 import MainLayout from './layouts/MainLayout';
 import HeaderBar from './components/HeaderBar';
+import Categories from './containers/Categories';
+import Week from './components/Week';
 
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -22,7 +22,9 @@ ReactDOM.render(
     <MainLayout>
       <App>
         <HeaderBar />
-        <Categories />
+        <Categories>
+          <Week />
+        </Categories>
       </App>
     </MainLayout>
   </MuiThemeProvider>,
