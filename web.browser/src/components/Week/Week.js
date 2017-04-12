@@ -20,4 +20,4 @@ const HeaderBar = () => (
   />
 );
 
-export default HeaderBar;
+export default Week;
