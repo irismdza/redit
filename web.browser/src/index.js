@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './containers/App';
+import Categories from './containers/Categories';
+
 import MainLayout from './layouts/MainLayout';
 import HeaderBar from './components/HeaderBar';
+
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from './styles/mui-theme';
@@ -19,6 +22,7 @@ ReactDOM.render(
     <MainLayout>
       <App>
         <HeaderBar />
+        <Categories />
       </App>
     </MainLayout>
   </MuiThemeProvider>,

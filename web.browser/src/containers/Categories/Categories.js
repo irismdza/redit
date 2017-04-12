@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import Drawer from 'material-ui/Drawer';
+import styles from './styles.css';
 
-import styles from './styles.css'
+class Categories extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {open: true};
+  }
 
-class App extends Component {
   render() {
     return (
-      <div className={styles.app}>
-        {this.props.children}
+      <div>
+        <Drawer open={this.state.open}>
+        </Drawer>
       </div>
     );
   }
 }
-
-App.propTypes = {
-  children: PropTypes.object,
-};
 
 export default Categories;

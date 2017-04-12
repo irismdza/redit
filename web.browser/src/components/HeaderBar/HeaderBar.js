@@ -9,7 +9,6 @@ const HeaderBar = () => (
     iconElementLeft={
         <SiteIcon />
     }
-    iconClassNameLeft="header-icon"
     iconClassNameRight="muidocs-icon-navigation-expand-more"
     iconElementRight={
         <div>
