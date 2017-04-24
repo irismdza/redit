@@ -3,18 +3,12 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.css'
 
-class App extends Component {
+class Welcome extends Component {
   render() {
     return (
-      <div className={styles.app}>
-        {this.props.children}
-      </div>
+     <p>Welcome</p>
     );
   }
 }
-
-App.propTypes = {
-  children: PropTypes.object,
-};
 
 export default Welcome;
