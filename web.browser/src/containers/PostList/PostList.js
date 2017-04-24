@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+import Post from '../../components/Post';
 
-import styles from './styles.css'
-
-class App extends Component {
-  render() {
-    return (
-      <div className={styles.app}>
-        {this.props.children}
-      </div>
-    );
-  }
-}
-
-App.propTypes = {
-  children: PropTypes.object,
+const PostList = ({ posts, updateVote }) => {
+  return (
+    <div>
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          post={post}
+          updateVote={updateVote}
+        />
+      ))};
+    </div>
+  );
 };
 
 export default PostList;
