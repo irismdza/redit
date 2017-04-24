@@ -1,23 +1,19 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
-import SiteIcon from 'material-ui/svg-icons/communication/import-contacts';
+import { Toolbar, ToolbarTitle } from 'material-ui/Toolbar';
 import FlatButton from 'material-ui/FlatButton';
 
-const HeaderBar = () => (
-  <AppBar
-    title="RED it"
-    iconElementLeft={
-        <SiteIcon />
-    }
-    iconClassNameLeft="header-icon"
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
-    iconElementRight={
-        <div>
-            <FlatButton label="Share a new link" />
-            <FlatButton label="Logout" />
-        </div>
-    }
-  />
+
+const PostToolbar = ({ sortNewest, sortMostPopular}) => (
+  <Toolbar>
+    <ToolbarTitle text="Posts" />
+      <FlatButton onTouchTap={sortNewest}>
+        Newest
+      </FlatButton>
+      <FlatButton onTouchTap={sortMostPopular}>
+        Most Popular
+      </FlatButton>
+
+  </Toolbar>
 );
 
 export default PostToolbar;
