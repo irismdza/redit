@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './styles.css'
+import HeaderBar from '../../components/HeaderBar';
+
+import styles from './styles.css';
 
 const MainLayout = ({ children }) => {
   return (
-    <div className={styles.mainLayout}>
-      {children}
+    <div>
+      <HeaderBar />
+      <div className={styles.mainLayout}>
+        {children}
+      </div>
     </div>
   );
 };
