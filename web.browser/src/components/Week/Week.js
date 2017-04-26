@@ -1,23 +1,19 @@
 import React from 'react';
-import AppBar from 'material-ui/AppBar';
-import SiteIcon from 'material-ui/svg-icons/communication/import-contacts';
-import FlatButton from 'material-ui/FlatButton';
+import { List, ListItem } from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+import Divider from 'material-ui/Divider';
 
-const HeaderBar = () => (
-  <AppBar
-    title="RED it"
-    iconElementLeft={
-        <SiteIcon />
-    }
-    iconClassNameLeft="header-icon"
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
-    iconElementRight={
-        <div>
-            <FlatButton label="Share a new link" />
-            <FlatButton label="Logout" />
-        </div>
-    }
-  />
+const Week = ({ week }) => (
+    <div>
+        <Subheader>
+            <p>{week.title}</p>
+        </Subheader>
+        <Divider />
+        {week.categories.map((category) => (
+            <ListItem key={category.id} primaryText={category} />
+        ))
+        }
+    </div>
 );
 
 export default Week;
