@@ -1,4 +1,4 @@
-#REDit
+# REDit
 
 A Reddit-inspired web application built using React.
 
@@ -9,7 +9,7 @@ A Reddit-inspired web application built using React.
 * Used Node Package Manager and Yarn for development
 
 ## Functionality
-* Imports mock data from a JSON file in sidebar menu
-* Displays posts in a list
-* Allows uses to 'upvote' posts
+* Imports mock data from a JSON file to populate in sidebar menu
+* Displays posts data in a list
+* Allows users to 'upvote' posts
 * Sorts posts by 'Newest' and 'Most Popular'
