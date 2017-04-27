@@ -1,12 +1,15 @@
-## ⚛️ RED React Seed Application
+#REDit
 
-#### Install
-- Clone or download this repository
-- Run `yarn` in the `server` & `web.browser` directories
+A Reddit-inspired web application built using React.
 
-#### Development
-- Run `npm start` from the `web.browser` directory
+## Technologies
+* Used React and the Material UI library to build UI
+* Used Redux and react-redux to manage application state: actions, reducers, store / combineReducers(), connect(), mapStateToProps() / <Provider> component
+* Used React Router for routing
+* Used Node Package Manager and Yarn for development
 
-#### Express server
-- Run `npm run build` from the `web.browser` directory
-- Run `npm run start:debug` from the `server` directory
+## Functionality
+* Imports mock data from a JSON file in sidebar menu
+* Displays posts in a list
+* Allows uses to 'upvote' posts
+* Sorts posts by 'Newest' and 'Most Popular'
