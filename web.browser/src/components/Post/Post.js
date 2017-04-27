@@ -1,20 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { connect, mapStateToProps } from 'react-redux';
 
 import { Card } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Chip from 'material-ui/Chip';
+import { updateVote } from './../../redux/actions';
 
-import { post, updateVote } from './../../redux/actions';
-
-const Post = ({ post, updateVote }) => (
+const Post = ({ post }) => (
   <Card>
     {post.link}
-    <FlatButton
-      onTouchTap={() => updateVote(post)}
-    >
+    <FlatButton onTouchTap={() => updateVote(post.id)}>
     {/*{this.props.dispatch(updateVote(vote));}*/}
-      {post.votes ? post.votes : '0' }
+     Vote {post.votes ? post.votes : '0' }
     </FlatButton>
     <p>{post.title}</p>
     <p>{post.description}</p>
@@ -22,10 +19,10 @@ const Post = ({ post, updateVote }) => (
   </Card>
 );
 
-// const mapStateToProps = (state) => {
-//     postList: state.post
-// };
+// function mapStateToProps(state) {
+//   return {
+//     postList: state.newPostList
+//   };
+// }
 
-// export default connect(mapStateToProps)(Post);
-
-export default Post;
+export default connect()(Post);

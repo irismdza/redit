@@ -1,20 +1,18 @@
 import { data } from './../mock-data';
 import { UPDATE_VOTE } from './actions';
 
-
 const initialState = data.posts;
 
-export function postReducer(state = initialState, action) {
+export function PostReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_VOTE:
-        const newPostList = state.posts.map((post) => {
-          if (action.payload.id === post.id) {
-            state.posts.votes++;
-          }
-                console.log('vote');
-                return post;
-            });
-            return newPostList;
+      data.posts.map((post) => {
+        if (action.id === post.id) {
+          post.votes += 1;
+        }
+        return post;
+      });
+
     default:
       return state;
   }

@@ -9,7 +9,6 @@ const HeaderBar = () => (
     iconElementLeft={
         <SiteIcon />
     }
-    iconClassNameRight="muidocs-icon-navigation-expand-more"
     iconElementRight={
         <div>
             <FlatButton label="Share a new link" />

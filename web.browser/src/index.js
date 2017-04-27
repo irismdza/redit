@@ -4,8 +4,8 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link,
-  Redirect
+  // Link,
+  // Redirect
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';

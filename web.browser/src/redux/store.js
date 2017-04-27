@@ -1,15 +1,20 @@
-import { createStore, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import postReducer from './../redux/postReducer';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import reduxLogger from 'redux-logger';
+import { PostReducer } from './postReducer';
 
-const store = createStore(
+// const mockMiddleware = store => next => (action) => {
+//   console.log(store.getState());
+//   const done = next(action);
+//   console.log(store.getState());
+//   return done;
+// };
+
+export default createStore(
     combineReducers({
-        postList: postReducer,
-        // week: weekReducer,
-        // categories: categoryReducer
+      posts: PostReducer
     }),
-    {},
-    composeWithDevTools(),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(
+        reduxLogger
+        ),
 );
-
-export default store;
