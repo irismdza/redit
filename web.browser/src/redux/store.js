@@ -1,17 +1,13 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import reduxLogger from 'redux-logger';
 import { PostReducer } from './postReducer';
-
-// const mockMiddleware = store => next => (action) => {
-//   console.log(store.getState());
-//   const done = next(action);
-//   console.log(store.getState());
-//   return done;
-// };
+import { SortNewestReducer } from './sortNewestReducer';
+import { SortMostPopularReducer } from './sortMostPopularReducer';
 
 export default createStore(
     combineReducers({
-      posts: PostReducer
+      posts: PostReducer, SortNewestReducer, SortMostPopularReducer
+      // weeks: WeeksReducer,
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(

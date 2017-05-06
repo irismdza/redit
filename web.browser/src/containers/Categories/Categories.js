@@ -23,12 +23,10 @@ class Categories extends Component {
         <Drawer open={this.state.open}>
           <AppBar
             title="RED it"
-            iconElementLeft={
-              <SiteIcon />
-            }
+            iconElementLeft={<SiteIcon />}
           />
           <List>
-            {this.state.weeks.map((week) => (
+            {this.state.weeks.map(week => (
               <Week
                 key={week.id}
                 week={week}

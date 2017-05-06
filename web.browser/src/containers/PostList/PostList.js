@@ -1,15 +1,14 @@
 import React from 'react';
 import Post from '../../components/Post';
-import { updateVote } from '../../redux/actions';
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, updateVote }) => {
   return (
     <div>
-      {posts.map((post) => (
+      {posts.map((post, i) => (
         <Post
-          key={post.id}
+          key={i}
           post={post}
-          updateVote={updateVote()}
+          updateVote={updateVote}
         />
       ))};
     </div>
