@@ -8,10 +8,10 @@ import FlatButton from 'material-ui/FlatButton';
 const PostToolbar = ({ sortNewest, sortMostPopular }) => (
   <Toolbar>
     <ToolbarTitle text="Posts" />
-    <FlatButton onTouchTap={() => this.sortNewest()}>
+    <FlatButton onTouchTap={() => sortNewest()}>
       Newest
     </FlatButton>
-    <FlatButton onTouchTap={() => this.sortMostPopular()}>
+    <FlatButton onTouchTap={() => sortMostPopular()}>
       Most Popular
     </FlatButton>
   </Toolbar>
