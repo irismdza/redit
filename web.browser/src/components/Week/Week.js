@@ -3,7 +3,7 @@ import { ListItem } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import Divider from 'material-ui/Divider';
 
-const Week = ({ week }) => (
+const Week = ({ week, selectLesson }) => (
   <div>
     <Subheader>
       <p>{week.title}</p>
@@ -13,6 +13,7 @@ const Week = ({ week }) => (
       <ListItem
         key={category.id}
         primaryText={category}
+        onTouchTap={() => selectLesson(category)}
       />
     ))
     }
