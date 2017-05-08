@@ -1,16 +1,16 @@
 import React from 'react';
 import Post from '../../components/Post';
 
-const PostList = ({ posts, updateVote }) => {
+const PostList = ({ posts, updateVote, selectedLesson }) => {
   return (
     <div>
-      {posts.map((post, i) => (
+      {posts.filter(post => post.categories.includes(selectedLesson)).map(post => (
         <Post
-          key={i}
+          key={post.id}
           post={post}
           updateVote={updateVote}
         />
-      ))};
+      ))}
     </div>
   );
 };

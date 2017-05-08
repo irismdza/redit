@@ -13,7 +13,7 @@ const Post = ({ post, updateVote }) => (
     <p>{post.description}</p>
     <FlatButton
       className={styles.upvote}
-      onTouchTap={() => updateVote()}
+      onTouchTap={() => updateVote(post.id)}
       label={`Vote ${post.votes}`}
     />
     <Chip label="Sort" />

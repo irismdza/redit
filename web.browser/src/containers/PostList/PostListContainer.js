@@ -7,14 +7,6 @@ import { updateVote, sortNewest, sortMostPopular } from './../../redux/actions';
 import styles from './styles.css';
 
 class PostListContainer extends Component {
-
-  constructor() {
-    super();
-    this.updateVote = this.updateVote.bind(this);
-    this.sortNewest = this.sortNewest.bind(this);
-    this.sortMostPopular = this.sortMostPopular.bind(this);
-  }
-
   updateVote(postId) {
     this.props.dispatch(updateVote(postId));
   }
@@ -31,12 +23,13 @@ class PostListContainer extends Component {
     return (
       <div className={styles.postListContainer}>
         <PostToolbar
-          sortNewest={this.sortNewest()}
-          sortMostPopular={this.sortMostPopular()}
+          sortNewest={() => this.sortNewest()}
+          sortMostPopular={() => this.sortMostPopular()}
         />
         <PostList
           posts={this.props.posts}
-          updateVote={this.updateVote()}
+          selectedLesson={this.props.selectedLesson}
+          updateVote={postid => this.updateVote(postid)}
         />
       </div>
     );
@@ -45,7 +38,8 @@ class PostListContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts
+    posts: state.posts,
+    selectedLesson: state.selectedLesson,
   };
 }
 
